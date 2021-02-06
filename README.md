@@ -151,3 +151,33 @@ Enter key name from above list: network
   }
 }
 ```
+
+## Challenge 3
+### Problem Statement
+We have a nested object, we would like a function that you pass in the object and a key and get back the value. How this is implemented is up to you.
+
+### Solution
+I have used python to create a function that will take json object and keys. Fuction will parse the provided json object and returns the value of the keys. It will resturn ```[None]``` if the provided key does not have any value. Here is an example of how to use the function where my json object is `{"a":{"b":{"c":"d"}}}` and getting value of key `c` (a/b/c). It should return the value as `['d']`.
+
+<b><u>Pre-requisites</u></b>
+
+1. Python should be installed
+
+<b><u>Execute function</u></b>
+
+Step-1 Clone this git repository and go to mentioned directory
+```
+$ git clone https://github.com/sourish88/KDO-TChlng.git
+$ cd Challenge-3
+```
+
+Step-2 Open python command prompt by running `python` on your terminal
+
+Step-3 Execute function
+```
+>>> import getElemJson
+>>> data = {"a":{"b":{"c":"d"}}}
+>>> getElemJson.extract_element_from_json(data, ["a", "b", "c"])
+
+['d']
+```
