@@ -2,7 +2,7 @@
 
 This repository contains solutions to provided challenges. Solutions for each challenge is described below.
 
-## Challenege 1
+## Challenge 1
 ### Problem Statement
 A 3 tier environment is a common setup. Use a tool of your choosing/familiarity create these resources. Please remember we will not be judged on the outcome but more focusing on the approach, style and reproducibility.
 ### Solution
@@ -65,7 +65,7 @@ It is a simple Angular Application which stores the Customer entry in RDS databa
 
 Try and add your firstname and last name. Then click on 'Customers' button and check if you can see your name listed. Also, try and search your last name to get your full name.
 
-## Challenege 2
+## Challenge 2
 ### Problem Statement
 We need to write code that will query the meta data of an instance within aws and provide a json formatted output. The choice of language and implementation is up to you.
 
