@@ -53,7 +53,7 @@ Step-3: Run below command to generate terraform plan for the changes
 
 Step-4: Validate your changes in the generated TF Plan
 
-`terraform show -json tfplan.out`
+`terraform show tfplan.out`
 
 Step-5: Once you are happy with the changes shown in TF plan, run below to apply and approve when asked
 
