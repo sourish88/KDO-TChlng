@@ -24,11 +24,15 @@ Here are the steps to deploy aboe architecture using terraform on AWS Cloud.
 <b><u>Pre-requisites</u></b>
 1. Create openSSH Key in your home directory (~/.ssh/id_rsa) using following command
 
-`ssh-keygen -t rsa -b 4096 -C "Enter you comment"`
+```
+ssh-keygen -t rsa -b 4096 -C "Enter you comment"
+```
 
 2. Install AWS CLI and setup your AWS access key and secret key
 
-`aws config`
+```
+aws config
+```
 
 3. Create S3 bucket for storing tfstate file. Name it as 'tf-dev-state-bucket-1'.
 
@@ -39,25 +43,34 @@ Here are the steps to deploy aboe architecture using terraform on AWS Cloud.
 <b><u>Apply terraform:</u></b>
 
 Step-1: Clone this git repository
-`git clone https://github.com/sourish88/KDO-TChlng.git`
+```
+git clone https://github.com/sourish88/KDO-TChlng.git
+```
 
 Step-2: Run below command to to initialise terraform
 
-`cd Challenge-1`
-
-`terraform init`
+```
+cd Challenge-1
+terraform init
+```
 
 Step-3: Run below command to generate terraform plan for the changes
 
-`terraform plan -var-file="env/dev.tfvars" --var db_username=<ENTER USERNAME> --var db_password=<ENTER PASSWORD> -out tfplan.out`
+```
+terraform plan -var-file="env/dev.tfvars" --var db_username=<ENTER USERNAME> --var db_password=<ENTER PASSWORD> -out tfplan.out
+```
 
 Step-4: Validate your changes in the generated TF Plan
 
-`terraform show tfplan.out`
+```
+terraform show tfplan.out
+```
 
 Step-5: Once you are happy with the changes shown in TF plan, run below to apply the generated plan
 
-`terraform apply tfplan.out`
+```
+terraform apply tfplan.out
+```
 
 <b><u>Test Application</b></u>
 It is a simple Angular Application which stores the Customer entry in RDS database and shows list of customers currently added in database. Login to AWS console and find the DNS Name of 'dev-elb-web' loadbalancer. Paste the DNS name in the browser which will present you this page:
@@ -81,12 +94,16 @@ Instance metadata is accessible from AWS Instance it self via the URL http://169
 
 Step-1: Clone this git repository on the required instance
 
-`git clone https://github.com/sourish88/KDO-TChlng.git`
+```
+git clone https://github.com/sourish88/KDO-TChlng.git
+```
 
 Step-2: Execute shell wrapper
 
-`cd Challenge-2`
-`./getInstMeta.sh`
+```
+cd Challenge-2
+./getInstMeta.sh
+```
 
 Step-3: Now you will be given list of metadata keys avaialable of the instance. 
 
