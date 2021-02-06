@@ -55,9 +55,9 @@ Step-4: Validate your changes in the generated TF Plan
 
 `terraform show tfplan.out`
 
-Step-5: Once you are happy with the changes shown in TF plan, run below to apply and approve when asked
+Step-5: Once you are happy with the changes shown in TF plan, run below to apply the generated plan and approve when asked
 
-`terraform apply -var-file="env/dev.tfvars" --var db_username=<ENTER USERNAME> --var db_password=<ENTER PASSWORD> tfplan.out`
+`terraform apply tfplan.out`
 
 <b><u>Test Application</b></u>
 It is a simple Angular Application which stores the Customer entry in RDS database and shows list of customers currently added in database. Login to AWS console and find the DNS Name of 'dev-elb-web' loadbalancer. Paste the DNS name in the browser which will present you this page:
