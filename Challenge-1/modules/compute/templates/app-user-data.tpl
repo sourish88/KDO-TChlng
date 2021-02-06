@@ -8,3 +8,4 @@ yum install -y apache-maven
 git clone https://github.com/tellisnz/terraform-aws.git
 cd terraform-aws/sample-web-app/server
 mvn spring-boot:run -Dspring.datasource.url=jdbc:postgresql://"${this_db_instance_address}:${db_port}/${db_name}" -Dspring.datasource.username="${db_username}" -Dspring.datasource.password="${db_password}" -Dserver.port="${app_port}" &
+npm start
