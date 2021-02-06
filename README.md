@@ -25,13 +25,13 @@ Here are the steps to deploy aboe architecture using terraform on AWS Cloud.
 1. Create openSSH Key in your home directory (~/.ssh/id_rsa) using following command
 
 ```
-ssh-keygen -t rsa -b 4096 -C "Enter you comment"
+$ ssh-keygen -t rsa -b 4096 -C "Enter you comment"
 ```
 
 2. Install AWS CLI and setup your AWS access key and secret key
 
 ```
-aws config
+$ aws config
 ```
 
 3. Create S3 bucket for storing tfstate file. Name it as 'tf-dev-state-bucket-1'.
@@ -44,32 +44,33 @@ aws config
 
 Step-1: Clone this git repository
 ```
-git clone https://github.com/sourish88/KDO-TChlng.git
+$ git clone https://github.com/sourish88/KDO-TChlng.git
 ```
 
 Step-2: Run below command to to initialise terraform
 
 ```
-cd Challenge-1
-terraform init
+$ chmod -R 700 KDO-TChlng
+$ cd KDO-TChlng/Challenge-1
+$ terraform init
 ```
 
 Step-3: Run below command to generate terraform plan for the changes
 
 ```
-terraform plan -var-file="env/dev.tfvars" --var db_username=<ENTER USERNAME> --var db_password=<ENTER PASSWORD> -out tfplan.out
+$ terraform plan -var-file="env/dev.tfvars" --var db_username=<ENTER USERNAME> --var db_password=<ENTER PASSWORD> -out tfplan.out
 ```
 
 Step-4: Validate your changes in the generated TF Plan
 
 ```
-terraform show tfplan.out
+$ terraform show tfplan.out
 ```
 
 Step-5: Once you are happy with the changes shown in TF plan, run below to apply the generated plan
 
 ```
-terraform apply tfplan.out
+$ terraform apply tfplan.out
 ```
 
 <b><u>Test Application</b></u>
@@ -95,14 +96,15 @@ Instance metadata is accessible from AWS Instance it self via the URL http://169
 Step-1: Clone this git repository on the required instance
 
 ```
-git clone https://github.com/sourish88/KDO-TChlng.git
+$ git clone https://github.com/sourish88/KDO-TChlng.git
 ```
 
 Step-2: Execute shell wrapper
 
 ```
-cd Challenge-2
-./getInstMeta.sh
+$ chmod -R 700 KDO-TChlng
+$ cd KDO-TChlng/Challenge-2
+$ ./getInstMeta.sh
 ```
 
 Step-3: Now you will be given list of metadata keys avaialable of the instance. 
@@ -185,7 +187,8 @@ I have used python to create a function that will take json object and keys. Fuc
 Step-1 Clone this git repository and go to mentioned directory
 ```
 $ git clone https://github.com/sourish88/KDO-TChlng.git
-$ cd Challenge-3
+$ chmod -R 700 KDO-TChlng
+$ cd KDO-TChlng/Challenge-3
 ```
 
 Step-2 Open python command prompt by running `python` on your terminal
