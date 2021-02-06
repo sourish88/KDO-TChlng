@@ -44,6 +44,7 @@ Step-1: Clone this git repository
 Step-2: Run below command to to initialise terraform
 
 `cd Challenge-1`
+
 `terraform init`
 
 Step-3: Run below command to generate terraform plan for the changes
