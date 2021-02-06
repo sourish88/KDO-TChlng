@@ -65,7 +65,7 @@ It is a simple Angular Application which stores the Customer entry in RDS databa
 
 Try and add your firstname and last name. Then click on 'Customers' button and check if you can see your name listed. Also, try and search your last name to get your full name.
 
-## Challenege 1
+## Challenege 2
 ### Problem Statement
 We need to write code that will query the meta data of an instance within aws and provide a json formatted output. The choice of language and implementation is up to you.
 
