@@ -55,7 +55,7 @@ Step-4: Validate your changes in the generated TF Plan
 
 `terraform show tfplan.out`
 
-Step-5: Once you are happy with the changes shown in TF plan, run below to apply the generated plan and approve when asked
+Step-5: Once you are happy with the changes shown in TF plan, run below to apply the generated plan
 
 `terraform apply tfplan.out`
 
