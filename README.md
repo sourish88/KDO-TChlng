@@ -64,3 +64,90 @@ It is a simple Angular Application which stores the Customer entry in RDS databa
 ![Sample Web App](Images/Angular-App.png)
 
 Try and add your firstname and last name. Then click on 'Customers' button and check if you can see your name listed. Also, try and search your last name to get your full name.
+
+## Challenege 1
+### Problem Statement
+We need to write code that will query the meta data of an instance within aws and provide a json formatted output. The choice of language and implementation is up to you.
+
+### Solution
+Instance metadata is accessible from AWS Instance it self via the URL http://169.254.169.254/latest/meta-data/. I have used a python script to fetch this metadata from the instance and output the same converted in json format. To facilitate the requirement for uer to select specific key value, I have wrapped in a shell which provides user input prompt for required keys.
+
+<b><u>Pre-requisites</u></b>
+
+1. Install python 2.7 and above
+2. Install jq
+
+<b><u>Execution</b></u>
+
+Step-1: Clone this git repository on the required instance
+
+`git clone https://github.com/sourish88/KDO-TChlng.git`
+
+Step-2: Execute shell wrapper
+
+`cd Challenge-2`
+`./getInstMeta.sh`
+
+Step-3: Now you will be given list of metadata keys avaialable of the instance. 
+
+```
+Below is the list of available metadata keys for this intsance:
+[
+  "ami-id",
+  "ami-launch-index",
+  "ami-manifest-path",
+  "block-device-mapping",
+  "events",
+  "hostname",
+  "identity-credentials",
+  "instance-action",
+  "instance-id",
+  "instance-life-cycle",
+  "instance-type",
+  "local-hostname",
+  "local-ipv4",
+  "mac",
+  "metrics",
+  "network",
+  "placement",
+  "profile",
+  "public-hostname",
+  "public-ipv4",
+  "public-keys",
+  "reservation-id",
+  "security-groups",
+  "services"
+]
+```
+
+Step-4: Enter the required keyname and press ENTER to get the result
+
+```
+Enter key name from above list: network
+{
+  "interfaces": {
+    "macs": {
+      "06:5e:52:26:c9:bc": {
+        "local-hostname": "ip-10-0-101-34.eu-west-2.compute.internal",
+        "security-groups": "dev-web-sg",
+        "public-hostname": "",
+        "vpc-ipv4-cidr-blocks": "10.0.0.0/16",
+        "subnet-id": "subnet-06dae7cfbcd72e932",
+        "public-ipv4s": "18.130.227.120",
+        "interface-id": "eni-0be5d828a9a9fcf12",
+        "mac": "06:5e:52:26:c9:bc",
+        "security-group-ids": "sg-0e9890f7df19b3d12",
+        "vpc-ipv4-cidr-block": "10.0.0.0/16",
+        "owner-id": "072132828108",
+        "local-ipv4s": "10.0.101.34",
+        "subnet-ipv4-cidr-block": "10.0.101.0/24",
+        "vpc-id": "vpc-09e50608f10b6e923",
+        "device-number": 0,
+        "ipv4-associations": {
+          "18.130.227.120": "10.0.101.34"
+        }
+      }
+    }
+  }
+}
+```
