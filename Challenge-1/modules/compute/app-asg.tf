@@ -4,7 +4,7 @@ data "template_file" "app_user_data" {
     vars = {
       this_db_instance_address = module.rds.this_db_instance_address
       db_port = var.db_port
-      db_name = "${var.name}-db"
+      db_name = "${var.name}db"
       db_username = var.db_username
       db_password = var.db_password
       app_port = var.app_port
